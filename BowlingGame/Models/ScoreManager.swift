@@ -18,7 +18,7 @@ protocol ScoreManagerProtocol {
 }
 
 /// An object for managing the scoring mechanics for a game
-final class ScoreManager {
+final class ScoreManager: ScoreManagerProtocol {
     /// running list of all possible rolls in a game (updated dynamically)
     private var rolls = [Int](repeating: 0, count: 21) // 21 possible throws in a game
     
