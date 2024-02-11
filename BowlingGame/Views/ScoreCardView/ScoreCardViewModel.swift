@@ -21,7 +21,7 @@ protocol ScoreCardViewModelProtocol {
     func resetGame()
 }
 
-enum ScoreCardViewModelError {
+enum ScoreCardViewModelError: Error {
     case invalidPinEntry
     
     var message: String {
