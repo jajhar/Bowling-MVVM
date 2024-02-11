@@ -130,6 +130,7 @@ final class Game: GameProtocol {
         guard let player = players.first else { return }
         // Player 1 always starts then it's a round robin experience
         currentPlayer = player
+        currentPlayerIndex = 0
     }
     
     /// Call to fetch the `ScoreManager` for a given player

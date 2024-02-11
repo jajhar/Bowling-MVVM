@@ -99,6 +99,7 @@ final class GameModelTests: XCTestCase {
 
         // player 2 up next
         XCTAssertEqual(sut.currentPlayer.id, player2.id)
+        XCTAssertEqual(sut.currentFrameNumber, 0) // frame is 0 for player 2
         
         // player two finishes their frame
         sut.rollStrike()
