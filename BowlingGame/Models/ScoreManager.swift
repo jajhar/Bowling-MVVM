@@ -12,6 +12,8 @@ protocol ScoreManagerProtocol {
     var currentFrame: ScoreFrame { get }
     var isLastFrame: Bool { get }
     var isGameFinished: Bool { get }
+    var frames: [ScoreFrame] { get }
+    var score: Int { get }
     
     func roll(_ pinsKnocked: Int) -> Bool
     func reset()

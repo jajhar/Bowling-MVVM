@@ -38,7 +38,7 @@ final class Game: GameProtocol {
     private(set) var currentFrameNumber: Int = 0
         
     /// key = user id, value = scores for specific user
-    private var scores = [String: ScoreManager]()
+    private var scores = [String: (any ScoreManagerProtocol)]()
     
     /// The current frame being bowled
     var currentFrame: ScoreFrame {
@@ -136,7 +136,7 @@ final class Game: GameProtocol {
     /// Call to fetch the `ScoreManager` for a given player
     /// - Parameter player: The player
     /// - Returns: The `ScoreManager` for the given player
-    private func scoreManager(forPlayer player: (any PlayerProtocol)) -> ScoreManager {
+    private func scoreManager(forPlayer player: (any PlayerProtocol)) -> ScoreManagerProtocol {
         guard let manager = scores[player.id] else {
             assertionFailure("Player \(player.name) is missing associated ScoreManager.")
             return ScoreManager()
