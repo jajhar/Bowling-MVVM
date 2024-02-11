@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "310D9672-A92C-41BD-9CB6-3CCDF6777DA0",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:BowlingGame.xcodeproj",
+      "identifier" : "8C08F8BC2B75A6C8000086E3",
+      "name" : "BowlingGame"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:BowlingGame.xcodeproj",
+        "identifier" : "8C08F8CC2B75A6CD000086E3",
+        "name" : "BowlingGameTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:BowlingGame.xcodeproj",
+        "identifier" : "8C08F8D62B75A6CE000086E3",
+        "name" : "BowlingGameUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
