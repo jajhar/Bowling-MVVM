@@ -7,12 +7,35 @@
 
 import SwiftUI
 
-enum Page: String, Identifiable {
+enum Page: Identifiable {
     case playerEntry
-    case game
+    case game(players: [PlayerProtocol])
     
     var id: String {
-        rawValue
+        switch self {
+        case .playerEntry:
+            return "playerEntry"
+        case .game:
+            return "gameView"
+        }
+    }
+}
+
+extension Page: Hashable {
+    func hash(into myhasher: inout Hasher) {
+        // Using id to uniquely identify each person.
+        myhasher.combine(id)
+    }
+    
+    static func == (lhs: Page, rhs: Page) -> Bool {
+        switch (lhs, rhs) {
+        case (.playerEntry, .playerEntry):
+            return true
+        case (.game, .game):
+            return true
+        default:
+            return false
+        }
     }
 }
 
@@ -61,16 +84,11 @@ class Coordinator: ObservableObject {
     func build(page: Page) -> some View {
         switch page {
         case .playerEntry:
-            VStack {
-                Text("TODO?")
-            }
-        case .game:
+            PlayerEntryView(viewModel: .init())
+        case .game(let players):
             ScoreCardView(
                 viewModel: .init(
-                    game: Game(players: [
-                        Player(name: "Julia"),
-//                        Player(name: "Tyler") // uncomment for additional player(s)
-                    ])
+                    game: Game(players: players)
                 )
             )
             .navigationBarTitleDisplayMode(.inline)

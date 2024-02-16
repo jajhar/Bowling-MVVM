@@ -21,6 +21,9 @@
 		8C08F8F52B75D2D3000086E3 /* ScoreFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C08F8F42B75D2D3000086E3 /* ScoreFrame.swift */; };
 		8C08F8F72B75DA20000086E3 /* ScoreFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C08F8F62B75DA20000086E3 /* ScoreFrameView.swift */; };
 		8C08F8F92B761EB6000086E3 /* ScoreCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C08F8F82B761EB6000086E3 /* ScoreCard.swift */; };
+		8C1334182B8010B800FB17AA /* PlayerEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1334172B8010B800FB17AA /* PlayerEntryView.swift */; };
+		8C13341A2B8010D900FB17AA /* PlayerEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1334192B8010D900FB17AA /* PlayerEntryViewModel.swift */; };
+		8C13341C2B80162A00FB17AA /* PlayerEntryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C13341B2B80162A00FB17AA /* PlayerEntryViewModelTests.swift */; };
 		8CD9A0E22B76DEAA00BD824C /* ScoreFrameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD9A0E12B76DEAA00BD824C /* ScoreFrameViewModel.swift */; };
 		8CD9A0E72B76E82900BD824C /* MockDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD9A0E62B76E82900BD824C /* MockDataFactory.swift */; };
 		8CD9A0E92B76F54700BD824C /* ScoreManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD9A0E82B76F54700BD824C /* ScoreManagerTests.swift */; };
@@ -68,6 +71,9 @@
 		8C08F8F42B75D2D3000086E3 /* ScoreFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreFrame.swift; sourceTree = "<group>"; };
 		8C08F8F62B75DA20000086E3 /* ScoreFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreFrameView.swift; sourceTree = "<group>"; };
 		8C08F8F82B761EB6000086E3 /* ScoreCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCard.swift; sourceTree = "<group>"; };
+		8C1334172B8010B800FB17AA /* PlayerEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntryView.swift; sourceTree = "<group>"; };
+		8C1334192B8010D900FB17AA /* PlayerEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntryViewModel.swift; sourceTree = "<group>"; };
+		8C13341B2B80162A00FB17AA /* PlayerEntryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntryViewModelTests.swift; sourceTree = "<group>"; };
 		8CD9A0E12B76DEAA00BD824C /* ScoreFrameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreFrameViewModel.swift; sourceTree = "<group>"; };
 		8CD9A0E62B76E82900BD824C /* MockDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataFactory.swift; sourceTree = "<group>"; };
 		8CD9A0E82B76F54700BD824C /* ScoreManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManagerTests.swift; sourceTree = "<group>"; };
@@ -158,6 +164,7 @@
 				8CEC8D532B7735F2002D8A36 /* ScoreFrameViewModelTests.swift */,
 				8CD9A0F32B77076700BD824C /* CoordinatorTests.swift */,
 				8CD9A0F52B770CB500BD824C /* CoordinatorPathHandlerTests.swift */,
+				8C13341B2B80162A00FB17AA /* PlayerEntryViewModelTests.swift */,
 			);
 			path = BowlingGameTests;
 			sourceTree = "<group>";
@@ -187,10 +194,20 @@
 			isa = PBXGroup;
 			children = (
 				8CEC8D502B7719F0002D8A36 /* Reusable */,
+				8C1334162B8010A900FB17AA /* PlayerEntry */,
 				8CD9A0E32B76DF0400BD824C /* ScoreCardView */,
 				8CD9A0E42B76DF1100BD824C /* ScoreFrameView */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8C1334162B8010A900FB17AA /* PlayerEntry */ = {
+			isa = PBXGroup;
+			children = (
+				8C1334192B8010D900FB17AA /* PlayerEntryViewModel.swift */,
+				8C1334172B8010B800FB17AA /* PlayerEntryView.swift */,
+			);
+			path = PlayerEntry;
 			sourceTree = "<group>";
 		};
 		8CD9A0E32B76DF0400BD824C /* ScoreCardView */ = {
@@ -371,11 +388,13 @@
 				8C08F8F72B75DA20000086E3 /* ScoreFrameView.swift in Sources */,
 				8C08F8F02B75A783000086E3 /* ScoreCardViewModel.swift in Sources */,
 				8C08F8C32B75A6C8000086E3 /* ScoreCardView.swift in Sources */,
+				8C13341A2B8010D900FB17AA /* PlayerEntryViewModel.swift in Sources */,
 				8CD9A0E22B76DEAA00BD824C /* ScoreFrameViewModel.swift in Sources */,
 				8C08F8F52B75D2D3000086E3 /* ScoreFrame.swift in Sources */,
 				8CEC8D522B7719FF002D8A36 /* OvalTextFieldStyle.swift in Sources */,
 				8C08F8F92B761EB6000086E3 /* ScoreCard.swift in Sources */,
 				8CD9A0F22B77060400BD824C /* Coordinator.swift in Sources */,
+				8C1334182B8010B800FB17AA /* PlayerEntryView.swift in Sources */,
 				8C08F8EC2B75A743000086E3 /* Game.swift in Sources */,
 				8C08F8C12B75A6C8000086E3 /* BowlingGameApp.swift in Sources */,
 				8CD9A0EF2B77029300BD824C /* CoordinatorView.swift in Sources */,
@@ -386,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C13341C2B80162A00FB17AA /* PlayerEntryViewModelTests.swift in Sources */,
 				8C08F8D22B75A6CE000086E3 /* GameModelTests.swift in Sources */,
 				8CD9A0F42B77076700BD824C /* CoordinatorTests.swift in Sources */,
 				8CD9A0EC2B76F8BF00BD824C /* ScoreCardViewModelTests.swift in Sources */,
