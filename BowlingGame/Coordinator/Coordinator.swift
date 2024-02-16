@@ -73,6 +73,8 @@ class Coordinator: ObservableObject {
                     ])
                 )
             )
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Game")
         }
     }
 }

@@ -11,13 +11,16 @@ struct ScoreCardView: View {
     @ObservedObject var viewModel: ScoreCardViewModel
     @State private var rollInput: String = ""
     @FocusState private var rollFieldFocused: Bool
+    
+    @EnvironmentObject var coordinator: Coordinator
 
     var body: some View {
-        GeometryReader { proxy in
-            ScrollViewReader { proxy in
-                framesView
-                infoView(scrollProxy: proxy)
-            }
+        ScrollViewReader { proxy in
+            framesView
+            infoView(scrollProxy: proxy)
+        }
+        .onTapGesture {
+            rollFieldFocused = false
         }
     }
     

@@ -48,29 +48,29 @@ final class ScoreManager: ScoreManagerProtocol {
     
     // true when there are no possible rolls left to make
     var isGameFinished: Bool {
-        if isLastFrame {
-            let frame = currentFrame
-            
-            if frame.rolls.isEmpty {
-                // no rolls taken yet
-                return false
-            } else if frame.rolls.first == 10, frame.rolls.count < 3 {
-                // if first roll is a strike, player can roll again if frame has pins left (excluding the strike)
-                return false
-            } else if frame.rolls.count == 1, frame.rolls[0] != 10  {
-                // if first roll is not a strike, player can roll if there are pins left in the frame.
-                return false
-            } else if frame.rolls.count == 2,
-                      frame.rolls[0] + frame.rolls[1] == 10 || frame.rolls[1] == 10
-            {
-                // if the second roll is a strike or a spare, that means we have one bonus throw.
-                return false
-            }
-            
-            return true
+        guard isLastFrame else {
+            return false
         }
         
-        return false
+        let frame = currentFrame
+        
+        if frame.rolls.isEmpty {
+            // no rolls taken yet
+            return false
+        } else if frame.rolls.first == 10, frame.rolls.count < 3 {
+            // if first roll is a strike, player can roll again if frame has pins left (excluding the strike)
+            return false
+        } else if frame.rolls.count == 1, frame.rolls[0] != 10  {
+            // if first roll is not a strike, player can roll if there are pins left in the frame.
+            return false
+        } else if frame.rolls.count == 2,
+                  frame.rolls[0] + frame.rolls[1] == 10 || frame.rolls[1] == 10
+        {
+            // if the second roll is a strike or a spare, that means we have one bonus throw.
+            return false
+        }
+        
+        return true
     }
     
     init() {
@@ -147,6 +147,7 @@ final class ScoreManager: ScoreManagerProtocol {
             }
             
             if roll <= currentTotalRolls {
+                // if roll is 
                 frames[frameIndex].updateScore(score)
             }
             
